@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+// import { useEffect, useState } from 'react';
 import './App.css';
+import SideBar from './components/SideContent';
+import MainContent from './components/MainContent';
+import data from "./components/data.js"
+// import axios from 'axios';
 
 function App() {
+  const moveData = data
+  // const [moveData, setMoveData] = useState(data)
+  // const DATA_URL = "http://test.boxigo.in/api_assignment.json";
+
+  // useEffect(() => { 
+  //   axios.get(DATA_URL, {
+  //     headers:{"Access-Control-Allow-Origin":"*"}
+  //   }).then(res => {
+  //     console.log(res)
+  //     setMoveData(res)
+  //   })
+  // }, [])
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App-Content' >
+      <SideBar />
+      <MainContent moves={moveData} />
     </div>
   );
 }
